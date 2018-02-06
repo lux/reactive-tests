@@ -1,6 +1,6 @@
 # Reactive Tests in Unity
 
-Exploring unidirectional data flow in Unity (inspired by Redux, Vuex, etc), minus [UniRx](https://github.com/neuecc/UniRx) (yet). Uses [Zenject](https://github.com/modesttree/Zenject) for dependencies.
+Exploring [unidirectional data flow](https://www.exclamationlabs.com/blog/the-case-for-unidirectional-data-flow/) in Unity (inspired by Redux, Vuex, etc), minus [UniRx](https://github.com/neuecc/UniRx) (yet). Uses [Zenject](https://github.com/modesttree/Zenject) for dependencies.
 
 See `Assets/Tutorial` for sample code and `Assets/Tutorial/Scenes/Example.unity` for a working example scene. Here's a quick summary of classes:
 
