@@ -13,7 +13,7 @@ See `Assets/Counter/Example.unity` for a demo scene.
 
 Classes:
 
-* [CounterBootstrap](https://github.com/lux/reactive-tests/blob/master/Assets/Counter/CounterBootstrapp.cs) - Zenject bootstrapper.
+* [CounterBootstrap](https://github.com/lux/reactive-tests/blob/master/Assets/Counter/CounterBootstrap.cs) - Zenject bootstrapper.
 * [CounterActions](https://github.com/lux/reactive-tests/blob/master/Assets/Counter/CounterActions.cs) - Encapsulates logic in public methods called from views.
 * [CounterState](https://github.com/lux/reactive-tests/blob/master/Assets/Counter/CounterState.cs) - Encapsulates local state changes and fires change events.
 * [CounterView](https://github.com/lux/reactive-tests/blob/master/Assets/Counter/CounterView.cs) - Updates the UI on change events from user and state.
@@ -27,7 +27,7 @@ See `Assets/Tutorial/Example.unity` for a demo scene.
 
 Classes:
 
-* [TutorialBootstrap](https://github.com/lux/reactive-tests/blob/master/Assets/Tutorial/TutorialBootstrapp.cs) - Zenject bootstrapper.
+* [TutorialBootstrap](https://github.com/lux/reactive-tests/blob/master/Assets/Tutorial/TutorialBootstrap.cs) - Zenject bootstrapper.
 * [TutorialActions](https://github.com/lux/reactive-tests/blob/master/Assets/Tutorial/TutorialActions.cs) - Encapsulates logic in public methods called from views.
 * [TutorialState](https://github.com/lux/reactive-tests/blob/master/Assets/Tutorial/TutorialState.cs) - Encapsulates local state changes and fires change events.
 * [TutorialView](https://github.com/lux/reactive-tests/blob/master/Assets/Tutorial/TutorialView.cs) - Updates the UI on change events from user and state.
