@@ -10,12 +10,8 @@ namespace UniRxCounter {
 	public class CounterView : MonoBehaviour {
 		public Text label;
 
-		private CounterState _state;
-
 		[Inject]
-		private void Init (CounterState state) {
-			_state = state;
-		}
+		private CounterState _state;
 
 		private void Start () {
 			_state.counter.SubscribeToText (label);
