@@ -7,7 +7,7 @@ namespace UniRxCounter {
 
 	public class CounterBootstrap : MonoInstaller<CounterBootstrap> {
 		public override void InstallBindings () {
-			Container.BindInstance (GetComponent<CounterState> ());
+			Container.BindInstance (new CounterState (0));
 		}
 	}
 }

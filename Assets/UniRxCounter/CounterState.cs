@@ -5,11 +5,11 @@ using UniRx;
 
 namespace UniRxCounter {
 
-	public class CounterState : MonoBehaviour {
+	public class CounterState {
 		public ReactiveProperty<int> counter { get; private set; }
 		
-		private void Awake () {
-			counter = new ReactiveProperty<int> (0);
+		public CounterState (int initialValue) {
+			counter = new ReactiveProperty<int> (initialValue);
 		}
 		
 		public void IncrementCounter () {
