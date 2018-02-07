@@ -9,19 +9,19 @@ namespace Tutorial {
 	/// <summary>
 	/// Updates and responds to UI interactions.
 	/// </summary>
-	public class View : MonoBehaviour {
+	public class TutorialView : MonoBehaviour {
 		public Text stepTitle;
 		public Text stepInstructions;
 		public Button nextButton;
 
-		private Actions _actions;
-		private State _state;
+		private TutorialActions _actions;
+		private TutorialState _state;
 
 		private int currentStep;
 		private Step[] steps;
 
 		[Inject]
-		private void Init (Actions actions, State state) {
+		private void Init (TutorialActions actions, TutorialState state) {
 			_actions = actions;
 			_state = state;
 		}

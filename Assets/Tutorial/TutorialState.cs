@@ -7,7 +7,7 @@ namespace Tutorial {
 	/// <summary>
 	/// State management and mutations.
 	/// </summary>
-	public class State {
+	public class TutorialState {
 
 		// Events to listen for updates
 		public delegate void StepChanged (int step);

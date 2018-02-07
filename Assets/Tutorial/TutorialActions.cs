@@ -4,13 +4,13 @@ using Zenject;
 
 namespace Tutorial {
 
-	public class Actions : MonoBehaviour {
-		private State _state;
+	public class TutorialActions : MonoBehaviour {
+		private TutorialState _state;
 
 		private string prefsKey = "lastStep";
 
 		[Inject]
-		private void Init (State state) {
+		private void Init (TutorialState state) {
 			_state = state;
 
 			// Fetch initial state from the database
