@@ -1,6 +1,7 @@
 # Reactive Tests in Unity
 
-Exploring [unidirectional data flow](https://www.exclamationlabs.com/blog/the-case-for-unidirectional-data-flow/) in Unity (inspired by Redux, Vuex, etc), minus [UniRx](https://github.com/neuecc/UniRx) (yet). Uses [Zenject](https://github.com/modesttree/Zenject) for dependencies.
+Exploring [unidirectional data flow](https://www.exclamationlabs.com/blog/the-case-for-unidirectional-data-flow/) in Unity (inspired by Redux, Vuex, etc).
+Uses [Zenject](https://github.com/modesttree/Zenject) for dependencies.
 
 ## Examples
 
@@ -17,6 +18,19 @@ Classes:
 * [CounterActions](https://github.com/lux/reactive-tests/blob/master/Assets/Counter/CounterActions.cs) - Encapsulates logic in public methods called from views.
 * [CounterState](https://github.com/lux/reactive-tests/blob/master/Assets/Counter/CounterState.cs) - Encapsulates local state changes and fires change events.
 * [CounterView](https://github.com/lux/reactive-tests/blob/master/Assets/Counter/CounterView.cs) - Updates the UI on change events from user and state.
+
+### Counter with UniRx
+
+This example uses [UniRx](https://github.com/neuecc/UniRx) and does away with the intermediary
+actions class.
+
+See `Assets/UniRxCounter/Example.unity` for a demo scene.
+
+Classes:
+
+* [CounterBootstrap](https://github.com/lux/reactive-tests/blob/master/Assets/UniRxCounter/CounterBootstrap.cs) - Zenject bootstrapper.
+* [CounterState](https://github.com/lux/reactive-tests/blob/master/Assets/UniRxCounter/CounterState.cs) - Encapsulates local state changes and fires change events.
+* [CounterView](https://github.com/lux/reactive-tests/blob/master/Assets/UniRxCounter/CounterView.cs) - Updates the UI on change events from user and state.
 
 ### Tutorial
 
