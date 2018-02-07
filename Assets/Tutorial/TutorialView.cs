@@ -6,9 +6,6 @@ using Zenject;
 
 namespace Tutorial {
 
-	/// <summary>
-	/// Updates and responds to UI interactions.
-	/// </summary>
 	public class TutorialView : MonoBehaviour {
 		public Text stepTitle;
 		public Text stepInstructions;
@@ -17,13 +14,12 @@ namespace Tutorial {
 		private TutorialActions _actions;
 		private TutorialState _state;
 
-		private int currentStep;
-		private Step[] steps;
-
 		[Inject]
 		private void Init (TutorialActions actions, TutorialState state) {
 			_actions = actions;
 			_state = state;
+
+			nextButton.interactable = false;
 		}
 
 		private void OnEnable () {
@@ -45,20 +41,18 @@ namespace Tutorial {
 		}
 
 		public void HandleStepsReady (Step[] steps) {
-			this.steps = steps;
+			nextButton.interactable = true;
 		}
 
 		public void HandleStepChanged (int step) {
-			// Update UI with next step
-			stepTitle.text = string.Format ("Step {0}: {1}", step + 1, steps[step].title);
-			stepInstructions.text = steps[step].instructions;
+			Step cur = _state.CurrentStep (step);
+			if (cur == null) return;
 
-			// Store current locally for transitions
-			currentStep = step;
+			stepTitle.text = string.Format ("Step {0}: {1}", step + 1, cur.title);
+			stepInstructions.text = cur.instructions;
 		}
 
 		public void HandleCompleted () {
-			// Update UI to show tutorial completed
 			stepTitle.text = "Tutorial completed!";
 			stepInstructions.text = "";
 
@@ -66,7 +60,6 @@ namespace Tutorial {
 		}
 
 		public void HandleError (string err) {
-			// Handle errors
 			stepTitle.text = string.Format ("Error: {0}", err);
 			stepInstructions.text = "";
 		}

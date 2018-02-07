@@ -6,8 +6,12 @@ using UniRx;
 namespace UniRxCounter {
 
 	public class CounterState : MonoBehaviour {
-		public ReactiveProperty<int> counter = new ReactiveProperty<int> (0);
-	
+		public ReactiveProperty<int> counter { get; private set; }
+		
+		private void Awake () {
+			counter = new ReactiveProperty<int> (0);
+		}
+		
 		public void IncrementCounter () {
 			counter.Value++;
 		}

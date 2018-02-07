@@ -1,6 +1,6 @@
 ﻿namespace Tutorial {
 
-	public struct Step {
+	public class Step {
 		public string title;
 		public string instructions;
 

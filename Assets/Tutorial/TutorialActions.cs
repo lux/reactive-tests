@@ -13,7 +13,7 @@ namespace Tutorial {
 		private void Init (TutorialState state) {
 			_state = state;
 
-			// Fetch initial state from the database
+			// Pretend to fetch initial state from the database
 			StartCoroutine (FetchSteps ());
 		}
 
@@ -29,14 +29,14 @@ namespace Tutorial {
 			int initialStep = PlayerPrefs.GetInt (prefsKey, 0);
 
 			_state.SetSteps (steps);
-			_state.SetCurrentStep (initialStep);
+			_state.SetCurrent (initialStep);
 		}
 
 		public void NextStep () {
-			// Business logic, sync to web, etc. then update local state
-			int nextStep = _state.GetCurrentStep () + 1;
+			// Business logic (sync to database, etc.) then update local state
+			int nextStep = _state.CurrentStepNum () + 1;
 
-			if (nextStep >= _state.StepsCount ()) {
+			if (nextStep >= _state.TotalSteps ()) {
 				PlayerPrefs.SetInt (prefsKey, 0); // Reset for next time
 			} else {
 				PlayerPrefs.SetInt (prefsKey, nextStep);
