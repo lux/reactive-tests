@@ -45,3 +45,18 @@ Classes:
 * [TutorialActions](https://github.com/lux/reactive-tests/blob/master/Assets/Tutorial/TutorialActions.cs) - Encapsulates logic in public methods called from views.
 * [TutorialState](https://github.com/lux/reactive-tests/blob/master/Assets/Tutorial/TutorialState.cs) - Encapsulates local state changes and fires change events.
 * [TutorialView](https://github.com/lux/reactive-tests/blob/master/Assets/Tutorial/TutorialView.cs) - Updates the UI on change events from user and state.
+
+### Tutorial with UniRx
+
+This example syncs the state to `PlayerPrefs`, and provides some input validation at the
+state layer. I also replaced `TutorialActions` with a class that simulates fetching the
+initial state from database or disk, and saves the current state to PlayerPrefs.
+
+See `Assets/UniRxTutorial/Example.unity` for a demo scene.
+
+Classes:
+
+* [TutorialBootstrap](https://github.com/lux/reactive-tests/blob/master/Assets/UniRxTutorial/TutorialBootstrap.cs) - Zenject bootstrapper.
+* [TutorialState](https://github.com/lux/reactive-tests/blob/master/Assets/UniRxTutorial/TutorialState.cs) - Encapsulates state changes and fires change events.
+* [TutorialStorage](https://github.com/lux/reactive-tests/blob/master/Assets/UniRxTutorial/TutorialStorage.cs) - Simulates fetching and storing state to database, disk, etc.
+* [TutorialView](https://github.com/lux/reactive-tests/blob/master/Assets/UniRxTutorial/TutorialView.cs) - Updates the UI on change events from user and state.
