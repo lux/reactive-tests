@@ -22,6 +22,7 @@ namespace UniRxTutorial {
 			_state.ready.Subscribe (HandleStepsReady);
 			_state.completed.Subscribe (HandleCompleted);
 
+			nextButton.OnClickAsObservable ().Subscribe (_ => NextStep ());
 			nextButton.interactable = false;
 		}
 
