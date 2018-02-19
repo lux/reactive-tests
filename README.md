@@ -48,9 +48,9 @@ Classes:
 
 ### Tutorial with UniRx
 
-This example syncs the state to `PlayerPrefs`, and provides some input validation at the
-state layer. I also replaced `TutorialActions` with a class that simulates fetching the
-initial state from database or disk, and saves the current state to PlayerPrefs.
+This example rewrites the previous Tutorial example using UniRx. I replaced `TutorialActions`
+with `TutorialStorage` which simulates fetching the initial state from a database / on disk,
+and saves the current tutorial state to `PlayerPrefs`.
 
 See `Assets/UniRxTutorial/Example.unity` for a demo scene.
 
