@@ -14,8 +14,8 @@ namespace UniRxTutorial {
 		private void Init (TutorialState state) {
 			_state = state;
 
-			_state.step.Subscribe (HandleStepChanged);
-			_state.completed.Subscribe (HandleCompleted);
+			_state.step.Subscribe (HandleStepChanged).AddTo (this);
+			_state.completed.Subscribe (HandleCompleted).AddTo (this);
 
 			// Pretend to fetch initial state from the database
 			StartCoroutine (FetchSteps ());
